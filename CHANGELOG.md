@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+- **Index database location** — the index database has moved from `<project>/.dexter.db` to `<project>/.dexter/dexter.db`. Existing databases are automatically migrated on the next `dexter init` or LSP startup: the legacy `.dexter.db` (and its `-shm`/`-wal` siblings) is deleted and a fresh index is built in the new folder. Update your `.gitignore` to use `.dexter/` instead of `.dexter.db*`. Editor-extension repos (`dexter-vscode`, `dexter-zed`) continue to work via their existing `mix.exs` / `.git` fallbacks and can be updated separately.
+
 ## [0.5.3] - 2026-04-09
 
 ### Added
